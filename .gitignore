@@ -1,1 +1,6 @@
 node_modules
+settings.json
+.npmrc
+cypress.json
+package-lock.json
+package.json
