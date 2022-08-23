@@ -29,6 +29,7 @@
   - [x] 같은 이름일 시 alert
   - [x] 자동차 이름 앞뒤 공백 제거
 - [x] 유효성 검사 모두 통과 시 시도할 횟수 입력 title 및 form 랜더링
+- [ ] 게임 시작 시 자동차 이름을 입력받는 input에 focus
 
 **2. 시도할 횟수를 입력받는 기능**
 
@@ -38,6 +39,7 @@
 - [x] 다음과 같이 Car 객체를 만들고, new 를 이용해 인스턴스를 만들어 사용한다.
   ```javascript
   function Car(name) {
+    git;
     this.name = name;
   }
   ```
