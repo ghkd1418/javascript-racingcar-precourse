@@ -1,7 +1,5 @@
-import $ from '../utils/dom.js';
-
-const focusInput = () => {
-  $('#car-names-input').focus();
+const focusInput = $inputSelector => {
+  $inputSelector.focus();
 };
 
 export default focusInput;
