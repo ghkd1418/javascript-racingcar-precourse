@@ -9,6 +9,7 @@ export const ERROR = {
 export const CAR = {
   LIMIT_MAX: 9,
   LIMIT_MIN: 1,
+  MOVE_NUM: 4,
 };
 
 export const NAME = {

@@ -1,9 +1,12 @@
 import $ from '../utils/dom.js';
 import renderRepeatCountInput from '../views/renderRepeatCountInput.js';
+import { ERROR, NAME } from '../utils/constants.js';
+import alertInputError from '../views/alertInputError.js';
+import focusInput from '../views/focusInput.js';
 
 const isOVerMaxLength = carNames => {
-  if (carNames.some(name => name.length > 5)) {
-    alert('자동차 이름이 5글자를 초과하였습니다.');
+  if (carNames.some(name => name.length > NAME.MAX_LENGTH)) {
+    alertInputError(ERROR.OVER_MAX_LENGTH);
     return true;
   }
   return false;
@@ -11,7 +14,7 @@ const isOVerMaxLength = carNames => {
 
 const isDuplicate = carNames => {
   if (carNames.length !== new Set(carNames).size) {
-    alert('중복된 이름이 있습니다.');
+    alertInputError(ERROR.INPUT_DUPLICATE);
     return true;
   }
   return false;
@@ -19,7 +22,7 @@ const isDuplicate = carNames => {
 
 const isBlankInput = () => {
   if ($('#car-names-input').value === '') {
-    alert('빈 값을 입력했습니다. 다시 입력해주세요');
+    alertInputError(ERROR.INPUT_BLANK);
     return true;
   }
   return false;
@@ -27,7 +30,7 @@ const isBlankInput = () => {
 
 const isBlankCarName = carNames => {
   if (carNames.some(name => name.length === 0)) {
-    alert('빈 값을 입력했습니다.');
+    alertInputError(ERROR.INPUT_BLANK);
     return true;
   }
   return false;
@@ -58,6 +61,7 @@ const handleCarNameInput = () => {
   console.log(carNames);
   if (isValidCarName(carNames)) {
     renderRepeatCountInput();
+    focusInput($('#racing-count-input'));
   }
 };
 
