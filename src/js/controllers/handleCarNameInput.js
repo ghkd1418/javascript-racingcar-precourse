@@ -58,7 +58,6 @@ const handleCarNameInput = () => {
     .map(name => {
       return name.trim();
     });
-  console.log(carNames);
   if (isValidCarName(carNames)) {
     renderRepeatCountInput();
     focusInput($('#racing-count-input'));

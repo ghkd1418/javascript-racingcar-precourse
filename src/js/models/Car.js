@@ -7,7 +7,6 @@ function Car(name) {
 
   this.setMove = () => {
     const randomNumber = getRandomNumber();
-    console.log(randomNumber);
     if (randomNumber >= CAR.MOVE_NUM) {
       this.move += 1;
     }
