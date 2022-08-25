@@ -1,7 +1,8 @@
 import $ from '../utils/dom.js';
 
-const printGameWinner = () => {
-  $('#result-process').insertAdjacentHTML('afterend', `<span>최종 우승자: </span>`);
+const printGameWinner = winners => {
+  console.log(winners);
+  $('#result-process').insertAdjacentHTML('afterend', `<span>최종 우승자: ${winners}</span>`);
 };
 
 export default printGameWinner;
