@@ -1,4 +1,4 @@
-import $ from '../utils/dom';
+import $ from '../utils/dom.js';
 
 const createResultElement = () => {
   const resultP = document.createElement('p');

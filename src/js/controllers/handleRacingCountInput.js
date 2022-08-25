@@ -6,27 +6,21 @@ import alertInputError from '../views/alertInputError.js';
 const isOverMinCount = countInput => {
   if (countInput < COUNT.MIN_NUM) {
     alertInputError(ERROR.UNDER_MIN_COUNT);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 };
 
 const isUnderMaxCount = countInput => {
   if (countInput > COUNT.MAX_NUM) {
     alertInputError(ERROR.OVER_MAX_COUNT);
-    return true;
-  }
-  return false;
-};
-
-const isVaildCountInput = countInput => {
-  if (isUnderMaxCount(countInput)) {
-    return false;
-  }
-  if (isOverMinCount(countInput)) {
     return false;
   }
   return true;
+};
+
+const isVaildCountInput = countInput => {
+  return isOverMinCount(countInput) && isUnderMaxCount(countInput);
 };
 
 const handleRacingCountInput = () => {
