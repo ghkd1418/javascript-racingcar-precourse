@@ -8,4 +8,5 @@ const getGameWinner = cars => {
   });
   return winners;
 };
+
 export default getGameWinner;
